@@ -12,6 +12,7 @@ public class MainL3 {
         replace();
         fillArray();
         multiplyingNumbersInArray();
+        fillDiagonalElements();
     }
 
     public static boolean isRange(int a, int b) {
@@ -83,6 +84,21 @@ public class MainL3 {
             }
         }
         System.out.println("after replace: " + Arrays.toString(arr));
+    }
+
+    public static void fillDiagonalElements() {
+        int arr[][] = new int[20][20];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i][arr.length - i - 1] = 1;
+            System.out.println(arr[i][i]);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                arr[i][i] = 1;
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
 
