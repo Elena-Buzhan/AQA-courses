@@ -87,7 +87,7 @@ public class MainL3 {
     }
 
     public static void fillDiagonalElements() {
-        int arr[][] = new int[20][20];
+        int arr[][] = new int[10][10];
         for (int i = 0; i < arr.length; i++) {
             arr[i][arr.length - i - 1] = 1;
             System.out.println(arr[i][i]);
