@@ -13,6 +13,7 @@ public class MainL3 {
         fillArray();
         multiplyingNumbersInArray();
         fillDiagonalElements();
+        System.out.println(Arrays.toString(inputArgLen(5, 88)));
     }
 
     public static boolean isRange(int a, int b) {
@@ -87,18 +88,30 @@ public class MainL3 {
     }
 
     public static void fillDiagonalElements() {
-        int arr[][] = new int[10][10];
+        int arr[][] = new int[6][6];
+        // цикл для заполнения диагональных элементов единицами
         for (int i = 0; i < arr.length; i++) {
+            arr[i][i] = 1;
             arr[i][arr.length - i - 1] = 1;
-            System.out.println(arr[i][i]);
         }
+
+        // данный цикл для вывода массива в консоль (необязательный, оставила для тестов)
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
-                arr[i][i] = 1;
                 System.out.print(arr[i][j] + " ");
             }
             System.out.println();
         }
     }
+
+    public static int[] inputArgLen(int len, int initialValue) {
+        int[] arr = new int[len];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = initialValue;
+        }
+        return arr;
+    }
 }
+
+
 
