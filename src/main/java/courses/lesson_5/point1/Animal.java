@@ -1,4 +1,4 @@
-package courses.lesson_5;
+package courses.lesson_5.point1;
 
 public abstract class Animal {
     public String name;

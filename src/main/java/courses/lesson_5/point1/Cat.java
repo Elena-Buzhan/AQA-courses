@@ -1,4 +1,4 @@
-package courses.lesson_5;
+package courses.lesson_5.point1;
 
 public class Cat extends Animal {
     private static final int MAX_DISTANCE = 200;
