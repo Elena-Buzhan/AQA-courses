@@ -33,6 +33,6 @@ public class AppData {
         return "AppData{" +
                 "header = " + Arrays.toString(header) +
                 ", data = " + Arrays.deepToString(data) +
-        "}";
+                "}";
     }
 }

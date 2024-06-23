@@ -30,12 +30,17 @@ public class CsvHandler {
     public static AppData loadFile(String filePatch) {
         String[] header = null;
         int[][] data = null;
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePatch))) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filePatch));
             String headerLine = reader.readLine();
             header = headerLine.split(";");
 
-            int rows = (int) (reader.lines().count()+1);
+            int rows = (int) reader.lines().count();
             data = new int[rows][header.length];
+
+            reader.close();
+            reader = new BufferedReader(new FileReader(filePatch));
+            reader.readLine();
 
             String line;
             int rowIndex = 0;
@@ -47,7 +52,7 @@ public class CsvHandler {
 
                 rowIndex++;
             }
-
+            reader.close();
             System.out.println("File loaded successfully");
         } catch (IOException e) {
             System.out.println("Error");
