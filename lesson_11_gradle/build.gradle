@@ -37,14 +37,12 @@ javafx {
 dependencies {
   implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.22.0'
 
-  testImplementation group: 'io.quarkus', name: 'quarkus-junit5', version: '3.12.2'
-  testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.2'
-  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+  testImplementation 'org.testng:testng:7.7.1'
 }
 
 test {
-useJUnitPlatform()}
+useTestNG()
+}
 
 jlink {
   imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
