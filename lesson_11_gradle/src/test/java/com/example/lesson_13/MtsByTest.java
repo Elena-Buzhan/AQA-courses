@@ -95,8 +95,13 @@ public class MtsByTest {
     }
 
     private void acceptCookies() {
-        WebElement cookieButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#cookie-agree")));
-        cookieButton.click();
+        WebElement cookieButton;
+        try {
+            cookieButton = driver.findElement(By.cssSelector("button#cookie-agree.btn.btn_black.cookie__ok"));
+            cookieButton.click();
+        } catch (Exception e) {
+            System.out.printf("Кнопка принятия/согласия куки не найдена или не кликабельна. \nException: %s%n", e);
+        }
     }
 
 }
