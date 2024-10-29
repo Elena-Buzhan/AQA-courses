@@ -10,7 +10,12 @@ public class FactorialCalculator {
         }
         long result = 1;
         for (int i = 2; i <= n; i++) {
-            result *= i;
+            long nextResult = result * i;
+            // Проверка на переполнение: если nextResult / i не равно result, значит произошло переполнение
+            if (nextResult / i != result) {
+                throw new ArithmeticException("Переполнение при вычислении факториала для " + n);
+            }
+            result = nextResult;
         }
         return result;
     }

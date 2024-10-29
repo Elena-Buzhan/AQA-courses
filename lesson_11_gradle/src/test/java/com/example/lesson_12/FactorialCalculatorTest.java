@@ -29,4 +29,19 @@ public class FactorialCalculatorTest {
         assertEquals("Число должно быть неотрицательным.", exception.getMessage());
     }
 
+    @Test
+    void testFactorialUpperRange() {
+        // Тестирование верхней границы в пределах long
+        assertEquals(2432902008176640000L, factorial(20), "Факториал 20 должен быть корректным");
+
+        // Тестируем переполнение для числа 21 и ожидаем исключение
+        assertThrows(ArithmeticException.class, () -> factorial(21), "Ожидается переполнение для факториала 21");
+    }
+
+    @Test
+    void testFactorialNegative() {
+        // Тестирование отрицательного числа и ожидание исключения
+        assertThrows(IllegalArgumentException.class, () -> factorial(-1), "Ожидается исключение для отрицательного числа");
+    }
+
 }
