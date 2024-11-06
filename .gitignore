@@ -1,9 +1,9 @@
-HELP.md
 .gradle
-/build/
-/logs/
+build/
+/buildSrc/build/
 !gradle/wrapper/gradle-wrapper.jar
-
+!**/src/main/**
+!**/src/test/**
 ### STS ###
 .apt_generated
 .classpath
@@ -12,23 +12,20 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
-
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
-/out/
-
+out/
+logs/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-
 ### VS Code ###
 .vscode/
-
 ### .werf ###
 .werf_secret_key
